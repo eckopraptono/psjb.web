@@ -185,25 +185,48 @@
             margin: auto;
         }
         @media (max-width: 640px) {
-            #wa-float-btn {
-                right: 1rem;
-                bottom: 1rem;
-                width: 48px;
-                height: 48px;
+            /* Section padding lebih kecil di mobile */
+            section, .section-title, .section-subtitle {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
             }
-            #wa-float-btn svg {
-                width: 40px;
-                height: 40px;
+            .section-title {
+                font-size: 1.3rem !important;
+            }
+            .section-subtitle {
+                font-size: 0.95rem !important;
+            }
+            /* Grid program dan galeri 1 kolom di mobile */
+            #kegiatan .grid, #galeriGrid {
+                grid-template-columns: 1fr !important;
+            }
+            /* Card program dan galeri padding lebih kecil */
+            .card, #galeriGrid > div {
+                padding: 0.5rem !important;
+            }
+            /* Gambar galeri dan card lebih kecil */
+            #galeriGrid img, .card img {
+                height: 180px !important;
+                min-height: 120px !important;
+                object-fit: cover !important;
+            }
+            /* Modal galeri lebih kecil */
+            #modalGaleri .relative {
+                max-width: 95vw !important;
+            }
+            #modalGaleri img {
+                max-height: 60vh !important;
+            }
+            /* Tombol mengambang tidak tumpang tindih */
+            #wa-float-btn {
+                bottom: 4.5rem !important;
             }
             #ig-float-btn {
-                right: 1rem;
-                bottom: 4.5rem;
-                width: 48px;
-                height: 48px;
+                bottom: 1rem !important;
             }
-            #ig-float-btn svg {
-                width: 40px;
-                height: 40px;
+            /* Footer font kecil */
+            footer p {
+                font-size: 0.85rem !important;
             }
         }
     </style>
