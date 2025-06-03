@@ -185,50 +185,146 @@
             margin: auto;
         }
         @media (max-width: 640px) {
-            /* Section padding lebih kecil di mobile */
-            section, .section-title, .section-subtitle {
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
-            }
-            .section-title {
-                font-size: 1.3rem !important;
-            }
-            .section-subtitle {
-                font-size: 0.95rem !important;
-            }
-            /* Grid program dan galeri 1 kolom di mobile */
-            #kegiatan .grid, #galeriGrid {
-                grid-template-columns: 1fr !important;
-            }
-            /* Card program dan galeri padding lebih kecil */
-            .card, #galeriGrid > div {
-                padding: 0.5rem !important;
-            }
-            /* Gambar galeri dan card lebih kecil */
-            #galeriGrid img, .card img {
-                height: 180px !important;
-                min-height: 120px !important;
-                object-fit: cover !important;
-            }
-            /* Modal galeri lebih kecil */
-            #modalGaleri .relative {
-                max-width: 95vw !important;
-            }
-            #modalGaleri img {
-                max-height: 60vh !important;
-            }
-            /* Tombol mengambang tidak tumpang tindih */
-            #wa-float-btn {
-                bottom: 4.5rem !important;
-            }
-            #ig-float-btn {
-                bottom: 1rem !important;
-            }
-            /* Footer font kecil */
-            footer p {
-                font-size: 0.85rem !important;
-            }
-        }
+    /* Section: padding dan margin konsisten */
+    section {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+        margin-bottom: 0 !important;
+    }
+    .section-title {
+        font-size: 1.25rem !important;
+        margin-bottom: 0.75rem !important;
+        padding: 0 !important;
+    }
+    .section-subtitle {
+        font-size: 0.95rem !important;
+        margin-bottom: 2rem !important;
+        padding: 0 !important;
+    }
+    /* Navigasi mobile: padding dan font lebih besar */
+    #mobile-menu a {
+        font-size: 1.1rem !important;
+        padding: 0.75rem 0 !important;
+        border-bottom: 1px solid #f3f4f6;
+    }
+    #mobile-menu a:last-child {
+        border-bottom: none;
+    }
+    /* Grid program, galeri, kontak: 1 kolom */
+    #kegiatan .grid, #galeriGrid, #kontak .grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+    /* Galeri grid: 2 kolom jika banyak gambar */
+    #galeriGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 0.75rem !important;
+    }
+    /* Card dan galeri: padding & margin lebih kecil */
+    .card, #galeriGrid > div, #kontak .bg-white {
+        padding: 0.75rem !important;
+        margin-bottom: 1rem !important;
+        border-radius: 0.75rem !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07) !important;
+    }
+    /* Gambar galeri dan card lebih kecil */
+    #galeriGrid img, .card img {
+        height: 140px !important;
+        min-height: 100px !important;
+        object-fit: cover !important;
+        width: 100% !important;
+        aspect-ratio: 3/4 !important;
+        background: #f3f4f6;
+    }
+    #galeriGrid > div {
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 0.75rem !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07) !important;
+        background: #f3f4f6 !important;
+    }
+    /* Modal galeri lebih kecil */
+    #modalGaleri .relative {
+        max-width: 98vw !important;
+    }
+    #modalGaleri img {
+        max-height: 55vh !important;
+    }
+    /* Tombol mengambang tidak tumpang tindih */
+    #wa-float-btn {
+        bottom: 5.5rem !important;
+        right: 1rem !important;
+    }
+    #ig-float-btn {
+        bottom: 1.5rem !important;
+        right: 1rem !important;
+    }
+    /* Form kontak: padding kecil, full width */
+    #kontak form {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+    /* Footer font kecil dan padding kecil */
+    footer p {
+        font-size: 0.85rem !important;
+    }
+    footer {
+        padding: 1.25rem 0 !important;
+    }
+    #kontak .grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+    #kontak .bg-white {
+        padding: 1.25rem 1rem !important;
+        margin-bottom: 1.25rem !important;
+        border-radius: 0.85rem !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.09) !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    #kontak .bg-white:last-child {
+        margin-bottom: 0 !important;
+    }
+    #kontak ul.space-y-4 > li {
+        gap: 0.5rem !important;
+        padding: 0.25rem 0 !important;
+        align-items: flex-start !important;
+    }
+    #kontak ul.space-y-4 > li span.w-24 {
+        min-width: 4.5rem !important;
+        width: 4.5rem !important;
+        display: inline-block !important;
+        text-align: left !important;
+        font-size: 0.97rem !important;
+    }
+    #kontak ul.space-y-4 > li a {
+        font-size: 0.97rem !important;
+        word-break: break-all;
+    }
+    #kontak .bg-white h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    #kontak form {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+    #kontak form .text-center {
+        margin-top: 1.25rem !important;
+    }
+    #kontak input, #kontak textarea {
+        font-size: 1rem !important;
+        padding: 0.6rem 0.9rem !important;
+    }
+    #kontak label {
+        font-size: 0.97rem !important;
+    }
+}
     </style>
 </head>
 <body class="bg-gray-50">
